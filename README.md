@@ -8,7 +8,7 @@ and scopes (singleton and transient).
 ## Examples
 
 ```py
-from inversify import Container, injectable, inject_params
+from inversify import Container, injectable, inject
 
 class Token:
     def __init__(self, name):
@@ -38,7 +38,7 @@ class CustomLogger:
 
 @injectable
 class UserService:
-    @inject_params({'logger': LOGGER_TOKEN})
+    @inject({'logger': LOGGER_TOKEN})
     def __init__(self, logger):
         self.logger = logger
     def process(self):
